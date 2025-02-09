@@ -70,6 +70,10 @@ namespace DataManager
             TimeManager.OnTimerFinished -= OnTimerFinished;
         }
 
+        /// <summary>
+        /// Method is responsible for loading of data from playerprefs key for high score if it exists and raise an event
+        /// that marks that the game has been initialized post which first screen is shown.
+        /// </summary>
         private void InitializeGame()
         {
             _rules = new GameRulesManager();
@@ -77,6 +81,9 @@ namespace DataManager
             OnGameInitialized?.Invoke();
         }
 
+        /// <summary>
+        /// Restores data from playerprefs.
+        /// </summary>
         private void LoadHighScore()
         {
             if (PlayerPrefs.HasKey("HighScore")) {
@@ -84,6 +91,10 @@ namespace DataManager
             }
         }
 
+        /// <summary>
+        /// Called post the player chooses their choice for move
+        /// </summary>
+        /// <param name="move"></param>
         private void OnPlayerMoveChoiceSelected(Move move)
         {
             _playerMove = move;
@@ -95,6 +106,9 @@ namespace DataManager
             _aiMove = (Move) Random.Range(0, 5);
         }
 
+        /// <summary>
+        /// As the timer finishes, it means that player has run out of time and player didnt play any move.
+        /// </summary>
         private void OnTimerFinished()
         {
             _playerMove = Move.None;
@@ -102,6 +116,9 @@ namespace DataManager
             CheckAndUpdateResult();
         }
 
+        /// <summary>
+        /// Responsible for updating the result fields and sets the last result status for player.
+        /// </summary>
         private void CheckAndUpdateResult()
         {
             _lastGameResultStatus = _rules.GetGameResultStatus(_playerMove, _aiMove);

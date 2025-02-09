@@ -5,6 +5,9 @@ namespace DataManager
 {
     public class GameRulesManager
     {
+        /// <summary>
+        /// Class that manages the game rules logic.
+        /// </summary>
         private readonly Dictionary<Move, List<Move>> _winConditions = new()
         {
             { Move.Rock, new List<Move> { Move.Scissors, Move.Lizard } },

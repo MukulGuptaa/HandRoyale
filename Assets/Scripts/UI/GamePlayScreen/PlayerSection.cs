@@ -7,6 +7,10 @@ using Util;
 
 namespace UI.GamePlayScreen
 {
+    /// <summary>
+    /// Script attached ti the player section gameobject in the GamePlayScreen.
+    /// Responsible for handling the player section operations.
+    /// </summary>
     public class PlayerSection : MonoBehaviour
     {
         #region REFERENCES
@@ -42,6 +46,9 @@ namespace UI.GamePlayScreen
         #endregion
         /*-------------------------------------------------------------------------*/
 
+        /// <summary>
+        /// As soon as the timer is finished, we will be showing the menu screen.
+        /// </summary>
         private void OnTimerFinished()
         {
             ScreenManager.Instance.ShowMenuScreen(GameResultStatus.LOSS_BY_TIMEOUT);
@@ -77,6 +84,14 @@ namespace UI.GamePlayScreen
             PlayTimerAnimation();
         }
 
+        /// <summary>
+        /// Called when the player selects its move choice in the ui.
+        /// Here, we first stop the timer, the play the animation for showing the player their selected move.
+        /// Sound is also played for the option selection.
+        /// Also an event is raised that tells that the player has played their move.
+        /// </summary>
+        /// <param name="move"></param>
+        /// <param name="choiceRt"></param>
         private void OnPlayerMoveSelected(Move move, RectTransform choiceRt)
         {
             StopTimer();

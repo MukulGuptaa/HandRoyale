@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Util
 {
+    /// <summary>
+    /// Manages a countdown timer using a singleton pattern.
+    /// Provides events for timer updates and completion.
+    /// </summary>
     public class TimeManager : MonoBehaviour
     {
         public static TimeManager Instance { get; private set; }
@@ -25,6 +29,11 @@ namespace Util
             DontDestroyOnLoad(gameObject);
         }
 
+        /// <summary>
+        /// Starts a countdown timer for the specified duration.
+        /// If a timer is already running, it stops the previous one before starting a new timer.
+        /// </summary>
+        /// <param name="duration">Duration of the timer in seconds.</param>
         public void StartTimer(int duration)
         {
             if (_timerCoroutine != null)
@@ -35,6 +44,9 @@ namespace Util
             _timerCoroutine = StartCoroutine(TimerCoroutine());
         }
 
+        /// <summary>
+        /// Coroutine that updates the timer every second and triggers events.
+        /// </summary>
         private IEnumerator TimerCoroutine()
         {
             while (_remainingTime > 0)
@@ -47,6 +59,9 @@ namespace Util
             OnTimerFinished?.Invoke();
         }
 
+        /// <summary>
+        /// Stops the currently running timer, if any.
+        /// </summary>
         public void StopTimer()
         {
             if (_timerCoroutine != null)

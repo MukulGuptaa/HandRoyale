@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace UI.GamePlayScreen
 {
+    /// <summary>
+    /// Main script that is attached to the GamePlayScreen prefab.
+    /// </summary>
     public class GamePlayScreen : MonoBehaviour
     {
         #region REFERENCES

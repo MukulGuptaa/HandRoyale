@@ -8,6 +8,10 @@ using Util;
 
 namespace UI.GamePlayScreen
 {
+    /// <summary>
+    /// Script attached ti the ai section gameobject in the GamePlayScreen.
+    /// Responsible for handling the ai section ui operations.
+    /// </summary>
     public class AISection : MonoBehaviour
     {
         #region REFERENCES

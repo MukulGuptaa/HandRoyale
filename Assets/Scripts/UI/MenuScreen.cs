@@ -12,6 +12,12 @@ namespace UI
         MainMenu,
     }
     
+    /// <summary>
+    /// Menu screen is opened 2 times:
+    /// 1. When the game is launched
+    /// 2. When the game is over (Here we also show the game result status)
+    /// The ui for both the screens is almost identical with minor tweaks. 
+    /// </summary>
     public class MenuScreen : MonoBehaviour
     {
         #region REFERENCES

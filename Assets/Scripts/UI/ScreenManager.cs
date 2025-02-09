@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace UI
 {
+    /// <summary>
+    /// Script responsible for handling the screens show tasks.
+    /// </summary>
     public class ScreenManager : MonoBehaviour
     {
         #region GAMEOBJECT_REFERENCES
