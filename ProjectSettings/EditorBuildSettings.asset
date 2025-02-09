@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HandRoyaleScene.unity
+    guid: 05b19e084a0b84e8fb8d716a47b0758b
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: a04c4a5155f9e4b5694a96ba1bd8b4a4, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3aa5e911056094c929c1782709dd67e5, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4760ba6046feb47468979934f23b3a93, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
